@@ -1,0 +1,10 @@
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\bin\Debug\Examen - Cotizador de ropa.exe.config
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\bin\Debug\Examen - Cotizador de ropa.exe
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\bin\Debug\Examen - Cotizador de ropa.pdb
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\obj\Debug\Examen - Cotizador de ropa.csproj.AssemblyReference.cache
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\obj\Debug\Examen___Cotizador_de_ropa.Form1.resources
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\obj\Debug\Examen___Cotizador_de_ropa.Properties.Resources.resources
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\obj\Debug\Examen - Cotizador de ropa.csproj.GenerateResource.cache
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\obj\Debug\Examen - Cotizador de ropa.csproj.CoreCompileInputs.cache
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\obj\Debug\Examen - Cotizador de ropa.exe
+E:\GameDev\Quark\Examen - Cotizador de ropa\Examen - Cotizador de ropa\obj\Debug\Examen - Cotizador de ropa.pdb
