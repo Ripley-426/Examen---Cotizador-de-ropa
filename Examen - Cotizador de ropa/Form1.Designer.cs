@@ -48,6 +48,8 @@ namespace Examen___Cotizador_de_ropa
             this.buttonCotizar = new System.Windows.Forms.Button();
             this.labelPrecioCotizado = new System.Windows.Forms.Label();
             this.labelS = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelNombreTienda
@@ -91,59 +93,69 @@ namespace Examen___Cotizador_de_ropa
             // radioCamisa
             // 
             this.radioCamisa.AutoSize = true;
-            this.radioCamisa.Location = new System.Drawing.Point(13, 115);
+            this.radioCamisa.Enabled = false;
+            this.radioCamisa.Location = new System.Drawing.Point(16, 165);
             this.radioCamisa.Name = "radioCamisa";
             this.radioCamisa.Size = new System.Drawing.Size(59, 17);
             this.radioCamisa.TabIndex = 4;
             this.radioCamisa.TabStop = true;
             this.radioCamisa.Text = "Camisa";
             this.radioCamisa.UseVisualStyleBackColor = true;
+            this.radioCamisa.CheckedChanged += new System.EventHandler(this.radioCamisa_CheckedChanged);
             // 
             // radioPantalon
             // 
             this.radioPantalon.AutoSize = true;
-            this.radioPantalon.Location = new System.Drawing.Point(13, 138);
+            this.radioPantalon.Enabled = false;
+            this.radioPantalon.Location = new System.Drawing.Point(16, 188);
             this.radioPantalon.Name = "radioPantalon";
             this.radioPantalon.Size = new System.Drawing.Size(67, 17);
             this.radioPantalon.TabIndex = 5;
             this.radioPantalon.TabStop = true;
             this.radioPantalon.Text = "Pantalon";
             this.radioPantalon.UseVisualStyleBackColor = true;
+            this.radioPantalon.CheckedChanged += new System.EventHandler(this.radioPantalon_CheckedChanged);
             // 
             // checkManga
             // 
             this.checkManga.AutoSize = true;
-            this.checkManga.Location = new System.Drawing.Point(142, 115);
+            this.checkManga.Enabled = false;
+            this.checkManga.Location = new System.Drawing.Point(145, 165);
             this.checkManga.Name = "checkManga";
             this.checkManga.Size = new System.Drawing.Size(86, 17);
             this.checkManga.TabIndex = 6;
             this.checkManga.Text = "Manga corta";
             this.checkManga.UseVisualStyleBackColor = true;
+            this.checkManga.CheckedChanged += new System.EventHandler(this.checkManga_CheckedChanged);
             // 
             // checkCuello
             // 
             this.checkCuello.AutoSize = true;
-            this.checkCuello.Location = new System.Drawing.Point(250, 115);
+            this.checkCuello.Enabled = false;
+            this.checkCuello.Location = new System.Drawing.Point(253, 165);
             this.checkCuello.Name = "checkCuello";
             this.checkCuello.Size = new System.Drawing.Size(79, 17);
             this.checkCuello.TabIndex = 7;
             this.checkCuello.Text = "Cuello Mao";
             this.checkCuello.UseVisualStyleBackColor = true;
+            this.checkCuello.CheckedChanged += new System.EventHandler(this.checkCuello_CheckedChanged);
             // 
             // checkChupin
             // 
             this.checkChupin.AutoSize = true;
-            this.checkChupin.Location = new System.Drawing.Point(142, 139);
+            this.checkChupin.Enabled = false;
+            this.checkChupin.Location = new System.Drawing.Point(145, 189);
             this.checkChupin.Name = "checkChupin";
             this.checkChupin.Size = new System.Drawing.Size(59, 17);
             this.checkChupin.TabIndex = 8;
             this.checkChupin.Text = "Chupin";
             this.checkChupin.UseVisualStyleBackColor = true;
+            this.checkChupin.CheckedChanged += new System.EventHandler(this.checkChupin_CheckedChanged);
             // 
             // labelStock
             // 
             this.labelStock.AutoSize = true;
-            this.labelStock.Location = new System.Drawing.Point(15, 182);
+            this.labelStock.Location = new System.Drawing.Point(13, 240);
             this.labelStock.Name = "labelStock";
             this.labelStock.Size = new System.Drawing.Size(102, 13);
             this.labelStock.TabIndex = 9;
@@ -152,24 +164,26 @@ namespace Examen___Cotizador_de_ropa
             // radioStandard
             // 
             this.radioStandard.AutoSize = true;
-            this.radioStandard.Location = new System.Drawing.Point(107, 236);
+            this.radioStandard.Location = new System.Drawing.Point(47, 24);
             this.radioStandard.Name = "radioStandard";
             this.radioStandard.Size = new System.Drawing.Size(68, 17);
             this.radioStandard.TabIndex = 10;
             this.radioStandard.TabStop = true;
             this.radioStandard.Text = "Standard";
             this.radioStandard.UseVisualStyleBackColor = true;
+            this.radioStandard.CheckedChanged += new System.EventHandler(this.radioStandard_CheckedChanged);
             // 
             // radioPremium
             // 
             this.radioPremium.AutoSize = true;
-            this.radioPremium.Location = new System.Drawing.Point(233, 236);
+            this.radioPremium.Location = new System.Drawing.Point(177, 24);
             this.radioPremium.Name = "radioPremium";
             this.radioPremium.Size = new System.Drawing.Size(65, 17);
             this.radioPremium.TabIndex = 11;
             this.radioPremium.TabStop = true;
             this.radioPremium.Text = "Premium";
             this.radioPremium.UseVisualStyleBackColor = true;
+            this.radioPremium.CheckedChanged += new System.EventHandler(this.radioPremium_CheckedChanged);
             // 
             // labelPrecio
             // 
@@ -191,26 +205,32 @@ namespace Examen___Cotizador_de_ropa
             // 
             // textBoxPrecio
             // 
+            this.textBoxPrecio.Enabled = false;
             this.textBoxPrecio.Location = new System.Drawing.Point(92, 300);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(100, 20);
             this.textBoxPrecio.TabIndex = 14;
+            this.textBoxPrecio.TextChanged += new System.EventHandler(this.textBoxPrecio_TextChanged);
             // 
             // textBoxCantidad
             // 
+            this.textBoxCantidad.Enabled = false;
             this.textBoxCantidad.Location = new System.Drawing.Point(264, 300);
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(100, 20);
             this.textBoxCantidad.TabIndex = 15;
+            this.textBoxCantidad.TextChanged += new System.EventHandler(this.textBoxCantidad_TextChanged);
             // 
             // buttonCotizar
             // 
+            this.buttonCotizar.Enabled = false;
             this.buttonCotizar.Location = new System.Drawing.Point(12, 376);
             this.buttonCotizar.Name = "buttonCotizar";
             this.buttonCotizar.Size = new System.Drawing.Size(137, 52);
             this.buttonCotizar.TabIndex = 16;
             this.buttonCotizar.Text = "Cotizar";
             this.buttonCotizar.UseVisualStyleBackColor = true;
+            this.buttonCotizar.Click += new System.EventHandler(this.buttonCotizar_Click);
             // 
             // labelPrecioCotizado
             // 
@@ -230,11 +250,23 @@ namespace Examen___Cotizador_de_ropa
             this.labelS.TabIndex = 18;
             this.labelS.Text = "$";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioStandard);
+            this.groupBox1.Controls.Add(this.radioPremium);
+            this.groupBox1.Location = new System.Drawing.Point(16, 89);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(292, 54);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Calidad de las prendas";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 444);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelS);
             this.Controls.Add(this.labelPrecioCotizado);
             this.Controls.Add(this.buttonCotizar);
@@ -242,8 +274,6 @@ namespace Examen___Cotizador_de_ropa
             this.Controls.Add(this.textBoxPrecio);
             this.Controls.Add(this.labelCantidad);
             this.Controls.Add(this.labelPrecio);
-            this.Controls.Add(this.radioPremium);
-            this.Controls.Add(this.radioStandard);
             this.Controls.Add(this.labelStock);
             this.Controls.Add(this.checkChupin);
             this.Controls.Add(this.checkCuello);
@@ -257,6 +287,8 @@ namespace Examen___Cotizador_de_ropa
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,6 +315,7 @@ namespace Examen___Cotizador_de_ropa
         private System.Windows.Forms.Button buttonCotizar;
         private System.Windows.Forms.Label labelPrecioCotizado;
         private System.Windows.Forms.Label labelS;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

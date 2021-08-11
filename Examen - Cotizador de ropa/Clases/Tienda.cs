@@ -10,7 +10,7 @@ namespace Examen___Cotizador_de_ropa
     {
         private string _nombre;
         private string _direccion;
-        private List<Prenda> prendas;
+        private List<Prenda> prendas = new List<Prenda>();
 
 
         public Tienda(string nombre, string direccion)

@@ -11,12 +11,15 @@ namespace Examen___Cotizador_de_ropa
         public enum cortePantalon { Comunes, Chupines}
         private cortePantalon _corte;
 
+        public cortePantalon Corte { get => _corte; set => _corte = value; }
+
         public Pantalon(int cantidad, cortePantalon corte, calidadRopa calidad, float precio)
         {
             _cantidad = cantidad;
             _corte = corte;
             _calidad = calidad;
             _precio = precio;
+            Nombre = "Pantalon";
         }
 
         public float ObtieneModificadorDePrecio(float precioTotal)
@@ -28,6 +31,16 @@ namespace Examen___Cotizador_de_ropa
             base.ObtieneModificadorDePrecioPrenda(precioTotal);
 
             return precioTotal;
+        }
+
+        public override bool VerificarTipo(DatosCotizador coti)
+        {
+            if (coti.TipoDeCalidad == _calidad.ToString() &&
+                coti.TipoDeCorte == _corte.ToString())
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

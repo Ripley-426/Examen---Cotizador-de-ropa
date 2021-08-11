@@ -20,6 +20,7 @@ namespace Examen___Cotizador_de_ropa
             _cuello = cuello;
             _calidad = calidad;
             _precio = precio;
+            Nombre = "Camisa";
         }
 
         public float ObtieneModificadorDePrecio(float precioTotal)
@@ -35,6 +36,16 @@ namespace Examen___Cotizador_de_ropa
             base.ObtieneModificadorDePrecioPrenda(precioTotal);
 
             return precioTotal;
+        }
+        public override bool VerificarTipo(DatosCotizador coti)
+        {
+            if (coti.TipoDeCalidad == _calidad.ToString() &&
+                coti.TipoDeManga == _manga.ToString() &&
+                coti.TipoDeCuello == _cuello.ToString())
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

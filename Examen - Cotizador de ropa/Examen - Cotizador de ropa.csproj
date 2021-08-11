@@ -49,6 +49,7 @@
     <Compile Include="Clases\Camisa.cs" />
     <Compile Include="Clases\Cotizacion.cs" />
     <Compile Include="ControladorTienda.cs" />
+    <Compile Include="DatosCotizador.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

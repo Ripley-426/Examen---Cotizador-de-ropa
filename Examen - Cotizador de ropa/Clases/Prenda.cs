@@ -12,6 +12,11 @@ namespace Examen___Cotizador_de_ropa
         protected calidadRopa _calidad;
         protected float _precio;
         protected int _cantidad;
+        private string _nombre;
+
+        public string Nombre { get => _nombre; set => _nombre = value; }
+
+        public int Cantidad { get => _cantidad; set => _cantidad = value; }
 
         public float ObtieneModificadorDePrecioPrenda(float precioTotal)
         {
@@ -24,5 +29,7 @@ namespace Examen___Cotizador_de_ropa
                 return (precioTotal * 1.3f);
             }
         }
+
+        public abstract bool VerificarTipo(DatosCotizador coti);
     }
 }

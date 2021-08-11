@@ -15,6 +15,7 @@ namespace Examen___Cotizador_de_ropa
         {
             tienda = new Tienda("Casa de ropa", "Calle falsa 123");
             vendedor = new Vendedor("Juan", "Perez", 3590);
+            AgregarPrendasEnTienda();
         }
 
         public void AgregarPrendasEnTienda()
@@ -48,6 +49,32 @@ namespace Examen___Cotizador_de_ropa
         public string GetDatosVendedor()
         {
             return $"{vendedor.Nombre} {vendedor.Apellido} | {vendedor.CodigoDeVendedor}";
+        }
+
+        public int VerificarStock(DatosCotizador coti)
+        {
+            int cantidad = 0;
+            foreach (var prenda in tienda.Prendas)
+            {
+                if (prenda.Nombre == coti.TipoDePrenda)
+                {
+                    if (coti.TipoDePrenda == "Pantalon")
+                    {
+                        if (prenda.VerificarTipo(coti))
+                        {
+                            cantidad += prenda.Cantidad;
+                        }
+                    }
+                    else
+                    {
+                        if (prenda.VerificarTipo(coti))
+                        {
+                            cantidad += prenda.Cantidad;
+                        }
+                    }
+                }  
+            }
+            return cantidad;
         }
     }
 }
