@@ -49,6 +49,9 @@ namespace Examen___Cotizador_de_ropa
             this.labelPrecioCotizado = new System.Windows.Forms.Label();
             this.labelS = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelErrorPrecio = new System.Windows.Forms.Label();
+            this.labelErrorCanti = new System.Windows.Forms.Label();
+            this.LabelStockTextoDefault = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,11 +158,10 @@ namespace Examen___Cotizador_de_ropa
             // labelStock
             // 
             this.labelStock.AutoSize = true;
-            this.labelStock.Location = new System.Drawing.Point(13, 240);
+            this.labelStock.Location = new System.Drawing.Point(121, 241);
             this.labelStock.Name = "labelStock";
-            this.labelStock.Size = new System.Drawing.Size(102, 13);
+            this.labelStock.Size = new System.Drawing.Size(0, 13);
             this.labelStock.TabIndex = 9;
-            this.labelStock.Text = "Unidades en stock: ";
             // 
             // radioStandard
             // 
@@ -211,6 +213,7 @@ namespace Examen___Cotizador_de_ropa
             this.textBoxPrecio.Size = new System.Drawing.Size(100, 20);
             this.textBoxPrecio.TabIndex = 14;
             this.textBoxPrecio.TextChanged += new System.EventHandler(this.textBoxPrecio_TextChanged);
+            this.textBoxPrecio.Leave += new System.EventHandler(this.textBoxPrecio_Leave);
             // 
             // textBoxCantidad
             // 
@@ -220,6 +223,7 @@ namespace Examen___Cotizador_de_ropa
             this.textBoxCantidad.Size = new System.Drawing.Size(100, 20);
             this.textBoxCantidad.TabIndex = 15;
             this.textBoxCantidad.TextChanged += new System.EventHandler(this.textBoxCantidad_TextChanged);
+            this.textBoxCantidad.Leave += new System.EventHandler(this.textBoxCantidad_Leave);
             // 
             // buttonCotizar
             // 
@@ -261,11 +265,45 @@ namespace Examen___Cotizador_de_ropa
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Calidad de las prendas";
             // 
+            // labelErrorPrecio
+            // 
+            this.labelErrorPrecio.AutoSize = true;
+            this.labelErrorPrecio.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorPrecio.Location = new System.Drawing.Point(92, 327);
+            this.labelErrorPrecio.Name = "labelErrorPrecio";
+            this.labelErrorPrecio.Size = new System.Drawing.Size(98, 13);
+            this.labelErrorPrecio.TabIndex = 20;
+            this.labelErrorPrecio.Text = "Formato incorrecto.";
+            this.labelErrorPrecio.Visible = false;
+            // 
+            // labelErrorCanti
+            // 
+            this.labelErrorCanti.AutoSize = true;
+            this.labelErrorCanti.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorCanti.Location = new System.Drawing.Point(266, 327);
+            this.labelErrorCanti.Name = "labelErrorCanti";
+            this.labelErrorCanti.Size = new System.Drawing.Size(98, 13);
+            this.labelErrorCanti.TabIndex = 21;
+            this.labelErrorCanti.Text = "Formato incorrecto.";
+            this.labelErrorCanti.Visible = false;
+            // 
+            // LabelStockTextoDefault
+            // 
+            this.LabelStockTextoDefault.AutoSize = true;
+            this.LabelStockTextoDefault.Location = new System.Drawing.Point(13, 241);
+            this.LabelStockTextoDefault.Name = "LabelStockTextoDefault";
+            this.LabelStockTextoDefault.Size = new System.Drawing.Size(102, 13);
+            this.LabelStockTextoDefault.TabIndex = 22;
+            this.LabelStockTextoDefault.Text = "Unidades en stock: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 444);
+            this.Controls.Add(this.LabelStockTextoDefault);
+            this.Controls.Add(this.labelErrorCanti);
+            this.Controls.Add(this.labelErrorPrecio);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelS);
             this.Controls.Add(this.labelPrecioCotizado);
@@ -316,6 +354,9 @@ namespace Examen___Cotizador_de_ropa
         private System.Windows.Forms.Label labelPrecioCotizado;
         private System.Windows.Forms.Label labelS;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label labelErrorPrecio;
+        private System.Windows.Forms.Label labelErrorCanti;
+        private System.Windows.Forms.Label LabelStockTextoDefault;
     }
 }
 

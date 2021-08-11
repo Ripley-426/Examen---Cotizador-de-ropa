@@ -23,8 +23,41 @@ namespace Examen___Cotizador_de_ropa
             Nombre = "Camisa";
         }
 
-        public float ObtieneModificadorDePrecio(float precioTotal)
+        public Camisa(int cantidad, string manga, string cuello, string calidad, float precio)
         {
+            _cantidad = cantidad;
+            _precio = precio;
+            Nombre = "Camisa";
+            if (manga == "Larga")
+            {
+                _manga = tipoDeManga.Larga;
+            }
+            else
+            {
+                _manga = tipoDeManga.Corta;
+            }
+            if (calidad == "Standard")
+            {
+                _calidad = calidadRopa.Standard;
+            }
+            else
+            {
+                _calidad = calidadRopa.Premium;
+            }
+            if (cuello == "Mao")
+            {
+                _cuello = tipoDeCuello.Mao;
+            }
+            else
+            {
+                _cuello = tipoDeCuello.Comun;
+            }
+        }
+
+        public float ObtieneModificadorDePrecio()
+        {
+            float precioTotal = _precio * _cantidad;
+
             if (_manga == tipoDeManga.Corta)
             {
                 precioTotal *= 0.9f;

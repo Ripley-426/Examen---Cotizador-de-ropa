@@ -76,5 +76,21 @@ namespace Examen___Cotizador_de_ropa
             }
             return cantidad;
         }
+
+        public float Cotizar(DatosCotizador coti)
+        {
+            float precio = coti.Precio;
+            if (coti.TipoDePrenda == "Pantalon")
+            {
+                Pantalon pantalon = new Pantalon(coti.Cantidad, coti.TipoDeCorte, coti.TipoDeCalidad, precio);
+                precio = pantalon.ObtieneModificadorDePrecio();
+            }
+            else
+            {
+                Camisa camisa = new Camisa(coti.Cantidad, coti.TipoDeManga, coti.TipoDeCuello, coti.TipoDeCalidad, coti.Precio);
+                precio = camisa.ObtieneModificadorDePrecio();
+            }
+            return precio;
+        }
     }
 }

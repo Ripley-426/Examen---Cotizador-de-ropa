@@ -99,16 +99,80 @@ namespace Examen___Cotizador_de_ropa
         private void textBoxPrecio_TextChanged(object sender, EventArgs e)
         {
             textBoxCantidad.Enabled = true;
+            try
+            {
+                labelErrorPrecio.Visible = false;
+                float precioIngresado = float.Parse(textBoxPrecio.Text);
+                if (precioIngresado > 0)
+                {
+                    coti.Precio = precioIngresado;
+                    if (textBoxCantidad.Text != "")
+                    {
+                        buttonCotizar.Enabled = true;
+                    }
+                }
+                else
+                {
+                    throw new Exception("El numero debe ser positivo");
+                }
+            }
+            catch (FormatException)
+            {
+                labelErrorPrecio.Text = "Formato incorrecto.";
+                labelErrorPrecio.Visible = true;
+                buttonCotizar.Enabled = false;
+            }
+            catch (Exception exc)
+            {
+                labelErrorPrecio.Text = exc.Message;
+                labelErrorPrecio.Visible = true;
+                buttonCotizar.Enabled = false;
+            }
         }
 
         private void textBoxCantidad_TextChanged(object sender, EventArgs e)
         {
-            buttonCotizar.Enabled = true;
+            try
+            {
+                labelErrorCanti.Visible = false;
+                int CantidadIngresada = int.Parse(textBoxCantidad.Text);
+                if (CantidadIngresada > 0)
+                {
+                    if (CantidadIngresada <= int.Parse(labelStock.Text))
+                    {
+                        coti.Cantidad = CantidadIngresada;
+                        if (textBoxPrecio.Text != "")
+                        {
+                            buttonCotizar.Enabled = true;
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Cantidad mayor al stock");
+                    }
+                }
+                else
+                {
+                    throw new Exception("El numero debe ser positivo");
+                }
+            }
+            catch (FormatException)
+            {
+                labelErrorCanti.Text = "Formato incorrecto.";
+                labelErrorCanti.Visible = true;
+                buttonCotizar.Enabled = false;
+            }
+            catch (Exception exc)
+            {
+                labelErrorCanti.Text = exc.Message;
+                labelErrorCanti.Visible = true;
+                buttonCotizar.Enabled = false;
+            }
         }
 
         private void buttonCotizar_Click(object sender, EventArgs e)
         {
-
+            labelPrecioCotizado.Text = ct.Cotizar(coti).ToString();
         }
 
         private void checkManga_CheckedChanged(object sender, EventArgs e)
@@ -152,7 +216,17 @@ namespace Examen___Cotizador_de_ropa
 
         private void VerificarStock()
         {
-            labelStock.Text = $"Unidades de stock disponibles: {ct.VerificarStock(coti).ToString()}";
+            labelStock.Text = ct.VerificarStock(coti).ToString();
+        }
+
+        private void textBoxCantidad_Leave(object sender, EventArgs e)
+        {
+            textBoxCantidad.Text = coti.Cantidad.ToString();
+        }
+
+        private void textBoxPrecio_Leave(object sender, EventArgs e)
+        {
+            textBoxPrecio.Text = coti.Precio.ToString();
         }
     }
 }
