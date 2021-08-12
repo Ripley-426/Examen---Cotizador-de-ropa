@@ -12,7 +12,7 @@ namespace Examen___Cotizador_de_ropa
         protected calidadRopa _calidad;
         protected float _precio;
         protected int _cantidad;
-        private string _nombre;
+        protected string _nombre;
 
         public string Nombre { get => _nombre; set => _nombre = value; }
 
