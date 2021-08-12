@@ -108,7 +108,7 @@ namespace Examen___Cotizador_de_ropa
                     coti.Precio = precioIngresado;
                     if (textBoxCantidad.Text != "")
                     {
-                        buttonCotizar.Enabled = true;
+                        ControlarCantidad();
                     }
                 }
                 else
@@ -218,16 +218,26 @@ namespace Examen___Cotizador_de_ropa
         {
             LimpiarCotizacion();
             labelStock.Text = ct.VerificarStock(coti).ToString();
+            ControlarCantidad();
         }
 
         private void textBoxCantidad_Leave(object sender, EventArgs e)
         {
+            if(coti.Cantidad == 0)
+            {
+                coti.Cantidad = 1;
+            }
             textBoxCantidad.Text = coti.Cantidad.ToString();
         }
 
         private void textBoxPrecio_Leave(object sender, EventArgs e)
         {
+            if(coti.Precio == 0)
+            {
+                coti.Precio = 1;
+            }
             textBoxPrecio.Text = coti.Precio.ToString();
+            ControlarCantidad();
         }
 
         private void linkCotizaciones_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -261,6 +271,34 @@ namespace Examen___Cotizador_de_ropa
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ControlarCantidad()
+        {
+            if(textBoxCantidad.Text != "" && labelStock.Text !="")
+            {
+                try
+                {
+                    if (int.Parse(textBoxCantidad.Text) > int.Parse(labelStock.Text))
+                    {
+                        labelErrorCanti.Text = "Cantidad mayor al stock";
+                        labelErrorCanti.Visible = true;
+                        buttonCotizar.Enabled = false;
+                    }
+                    else
+                    {
+                        labelErrorCanti.Visible = false;
+                        buttonCotizar.Enabled = true;
+                    }
+                }
+                catch (Exception)
+                {
+                    labelErrorCanti.Text = "Formato incorrecto";
+                    labelErrorCanti.Visible = true;
+                    buttonCotizar.Enabled = false;
+                }
+                
+            }
         }
     }
 }
