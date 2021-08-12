@@ -351,7 +351,7 @@ namespace Examen___Cotizador_de_ropa
             this.Controls.Add(this.labelDireccionTienda);
             this.Controls.Add(this.labelNombreTienda);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Cotizador de ropa";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
