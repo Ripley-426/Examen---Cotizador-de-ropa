@@ -52,6 +52,8 @@ namespace Examen___Cotizador_de_ropa
             this.labelErrorPrecio = new System.Windows.Forms.Label();
             this.labelErrorCanti = new System.Windows.Forms.Label();
             this.LabelStockTextoDefault = new System.Windows.Forms.Label();
+            this.linkLabelLimpiar = new System.Windows.Forms.LinkLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +94,7 @@ namespace Examen___Cotizador_de_ropa
             this.linkCotizaciones.TabIndex = 3;
             this.linkCotizaciones.TabStop = true;
             this.linkCotizaciones.Text = "Historial Cotizaciones";
+            this.linkCotizaciones.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCotizaciones_LinkClicked);
             // 
             // radioCamisa
             // 
@@ -213,6 +216,7 @@ namespace Examen___Cotizador_de_ropa
             this.textBoxPrecio.Size = new System.Drawing.Size(100, 20);
             this.textBoxPrecio.TabIndex = 14;
             this.textBoxPrecio.TextChanged += new System.EventHandler(this.textBoxPrecio_TextChanged);
+            this.textBoxPrecio.Enter += new System.EventHandler(this.textBoxPrecio_Enter);
             this.textBoxPrecio.Leave += new System.EventHandler(this.textBoxPrecio_Leave);
             // 
             // textBoxCantidad
@@ -223,6 +227,7 @@ namespace Examen___Cotizador_de_ropa
             this.textBoxCantidad.Size = new System.Drawing.Size(100, 20);
             this.textBoxCantidad.TabIndex = 15;
             this.textBoxCantidad.TextChanged += new System.EventHandler(this.textBoxCantidad_TextChanged);
+            this.textBoxCantidad.Enter += new System.EventHandler(this.textBoxCantidad_Enter);
             this.textBoxCantidad.Leave += new System.EventHandler(this.textBoxCantidad_Leave);
             // 
             // buttonCotizar
@@ -296,11 +301,34 @@ namespace Examen___Cotizador_de_ropa
             this.LabelStockTextoDefault.TabIndex = 22;
             this.LabelStockTextoDefault.Text = "Unidades en stock: ";
             // 
+            // linkLabelLimpiar
+            // 
+            this.linkLabelLimpiar.AutoSize = true;
+            this.linkLabelLimpiar.Location = new System.Drawing.Point(332, 230);
+            this.linkLabelLimpiar.Name = "linkLabelLimpiar";
+            this.linkLabelLimpiar.Size = new System.Drawing.Size(103, 13);
+            this.linkLabelLimpiar.TabIndex = 23;
+            this.linkLabelLimpiar.TabStop = true;
+            this.linkLabelLimpiar.Text = "Limpiar Cotizaciones";
+            this.linkLabelLimpiar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLimpiar_LinkClicked);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(379, 391);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 49);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 444);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.linkLabelLimpiar);
             this.Controls.Add(this.LabelStockTextoDefault);
             this.Controls.Add(this.labelErrorCanti);
             this.Controls.Add(this.labelErrorPrecio);
@@ -357,6 +385,8 @@ namespace Examen___Cotizador_de_ropa
         private System.Windows.Forms.Label labelErrorPrecio;
         private System.Windows.Forms.Label labelErrorCanti;
         private System.Windows.Forms.Label LabelStockTextoDefault;
+        private System.Windows.Forms.LinkLabel linkLabelLimpiar;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -57,7 +57,7 @@ namespace Examen___Cotizador_de_ropa
 
         private void radioPantalon_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioPantalon.Checked == true)
+            if (radioPantalon.Checked == true)
             {
                 checkManga.Enabled = false;
                 checkCuello.Enabled = false;
@@ -70,7 +70,7 @@ namespace Examen___Cotizador_de_ropa
 
         private void radioStandard_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioStandard.Checked == true)
+            if (radioStandard.Checked == true)
             {
                 radioCamisa.Enabled = true;
                 radioPantalon.Enabled = true;
@@ -216,6 +216,7 @@ namespace Examen___Cotizador_de_ropa
 
         private void VerificarStock()
         {
+            LimpiarCotizacion();
             labelStock.Text = ct.VerificarStock(coti).ToString();
         }
 
@@ -227,6 +228,39 @@ namespace Examen___Cotizador_de_ropa
         private void textBoxPrecio_Leave(object sender, EventArgs e)
         {
             textBoxPrecio.Text = coti.Precio.ToString();
+        }
+
+        private void linkCotizaciones_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show(ct.HistorialCotizador());
+        }
+
+        private void linkLabelLimpiar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ct.LimpiarCotizaciones();
+        }
+
+
+        //Impide que se registren cotizaciones visualmente erroneas en el programa
+        //(Luego de hacer una cotizacion y mover los valores, si uno no esta atento puede confundirse de cotizacion).
+        private void LimpiarCotizacion()
+        {
+            labelPrecioCotizado.Text = "";
+        }
+
+        private void textBoxPrecio_Enter(object sender, EventArgs e)
+        {
+            LimpiarCotizacion();
+        }
+
+        private void textBoxCantidad_Enter(object sender, EventArgs e)
+        {
+            LimpiarCotizacion();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

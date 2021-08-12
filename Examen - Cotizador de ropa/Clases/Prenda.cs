@@ -18,7 +18,7 @@ namespace Examen___Cotizador_de_ropa
 
         public int Cantidad { get => _cantidad; set => _cantidad = value; }
 
-        public float ObtieneModificadorDePrecioPrenda(float precioTotal)
+        public float ModificaPrecio(float precioTotal)
         {
             if (_calidad == calidadRopa.Standard)
             {
@@ -31,5 +31,7 @@ namespace Examen___Cotizador_de_ropa
         }
 
         public abstract bool VerificarTipo(DatosCotizador coti);
+
+        public abstract string GetInformacion();
     }
 }

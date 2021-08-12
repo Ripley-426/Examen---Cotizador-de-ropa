@@ -10,6 +10,8 @@ namespace Examen___Cotizador_de_ropa
     {
         Tienda tienda;
         Vendedor vendedor;
+        List<Cotizacion> cotizaciones = new List<Cotizacion>();
+        private int nroCotizacion = 0;
 
         public void CrearTiendaVendedor()
         {
@@ -80,17 +82,36 @@ namespace Examen___Cotizador_de_ropa
         public float Cotizar(DatosCotizador coti)
         {
             float precio = coti.Precio;
+            nroCotizacion += 1;
+
             if (coti.TipoDePrenda == "Pantalon")
             {
                 Pantalon pantalon = new Pantalon(coti.Cantidad, coti.TipoDeCorte, coti.TipoDeCalidad, precio);
-                precio = pantalon.ObtieneModificadorDePrecio();
+                precio = pantalon.ModificaPrecio();
+                cotizaciones.Add(new Cotizacion(nroCotizacion, vendedor.CodigoDeVendedor, pantalon, precio));
             }
             else
             {
                 Camisa camisa = new Camisa(coti.Cantidad, coti.TipoDeManga, coti.TipoDeCuello, coti.TipoDeCalidad, coti.Precio);
-                precio = camisa.ObtieneModificadorDePrecio();
+                precio = camisa.ModificaPrecio();
+                cotizaciones.Add(new Cotizacion(nroCotizacion, vendedor.CodigoDeVendedor, camisa, precio));
             }
             return precio;
+        }
+
+        public string HistorialCotizador()
+        {
+            string historial = "";
+            foreach (var cotizacion in cotizaciones)
+            {
+                historial += cotizacion.GetCotizacion();
+            }
+            return historial;
+        }
+
+        public void LimpiarCotizaciones()
+        {
+            cotizaciones.Clear();
         }
     }
 }

@@ -54,7 +54,7 @@ namespace Examen___Cotizador_de_ropa
             }
         }
 
-        public float ObtieneModificadorDePrecio()
+        public float ModificaPrecio()
         {
             float precioTotal = _precio * _cantidad;
 
@@ -66,7 +66,7 @@ namespace Examen___Cotizador_de_ropa
             {
                 precioTotal *= 1.03f;
             }
-            base.ObtieneModificadorDePrecioPrenda(precioTotal);
+            precioTotal = base.ModificaPrecio(precioTotal);
 
             return precioTotal;
         }
@@ -79,6 +79,11 @@ namespace Examen___Cotizador_de_ropa
                 return true;
             }
             return false;
+        }
+
+        public override string GetInformacion()
+        {
+            return $"- {Nombre} | Cuello: {_cuello.ToString()} | Manga: {_manga.ToString()} | Calidad: {_calidad.ToString()} \n x{_cantidad} unidades a ${_precio}";
         }
     }
 }
